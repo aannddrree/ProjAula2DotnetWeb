@@ -69,6 +69,15 @@ namespace ProjAula2DotnetWeb
         protected global::System.Web.UI.WebControls.TextBox TxtEndereco;
 
         /// <summary>
+        /// Controle DDLCidades.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDLCidades;
+
+        /// <summary>
         /// Controle BtnSalvar.
         /// </summary>
         /// <remarks>

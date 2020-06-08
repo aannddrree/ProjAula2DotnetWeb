@@ -15,6 +15,10 @@ namespace ProjAula2DotnetWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                CarregarCidades();
+            }
             CarregarTabela();
         }
 
@@ -25,7 +29,8 @@ namespace ProjAula2DotnetWeb
                 Codigo = int.Parse(TxtCodigo.Text),
                 Nome = TxtNome.Text,
                 Telefone = TxtTelefone.Text,
-                Endereco = TxtEndereco.Text
+                Endereco = TxtEndereco.Text,
+                Cidade = new Cidade() { Id = int.Parse(DDLCidades.SelectedItem.Value.ToString()) }
             };
 
             PessoaDB pessoaDB = new PessoaDB();
@@ -59,6 +64,15 @@ namespace ProjAula2DotnetWeb
             PessoaDB pessoaDB = new PessoaDB();
             GVPessoa.DataSource = pessoaDB.ConsultarTudo();
             GVPessoa.DataBind();
+        }
+
+        private void CarregarCidades()
+        {
+            CidadeDB cidadeDB = new CidadeDB();
+            DDLCidades.DataSource = cidadeDB.consultar();
+            DDLCidades.DataValueField = "Id";
+            DDLCidades.DataTextField = "Nome";
+            DDLCidades.DataBind();
         }
     }     
             

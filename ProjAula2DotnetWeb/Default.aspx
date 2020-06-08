@@ -56,13 +56,31 @@
                     <td class="auto-style1">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                <tr>
+                    <td class="auto-style2">Cidade:</td>
+                    <td class="auto-style3">
+                        <asp:DropDownList ID="DDLCidades" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
             </table>
 
             <asp:Button ID="BtnSalvar" runat="server" OnClick="BtnSalvar_Click" Text="Salvar" />
             <br />
             <br />
-            <asp:GridView ID="GVPessoa" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GVPessoa" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False">
                 <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:BoundField DataField="Codigo" HeaderText="Código" />
+                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                    <asp:BoundField DataField="Telefone" HeaderText="Telefone" />
+                    <asp:BoundField DataField="Endereco" HeaderText="Endereço" />
+                    <asp:BoundField DataField="Cidade" HeaderText="Cidade" />
+                </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
