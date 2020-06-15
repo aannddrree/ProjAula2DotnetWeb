@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Dados
 {
@@ -16,5 +18,6 @@ namespace Dados
             sqliteConnection.Open();
             return sqliteConnection;
         }
+
     }
 }

@@ -69,7 +69,7 @@ namespace ProjAula2DotnetWeb
         private void CarregarCidades()
         {
             CidadeDB cidadeDB = new CidadeDB();
-            DDLCidades.DataSource = cidadeDB.consultar();
+            DDLCidades.DataSource = cidadeDB.Consultar();
             DDLCidades.DataValueField = "Id";
             DDLCidades.DataTextField = "Nome";
             DDLCidades.DataBind();
