@@ -56,14 +56,19 @@ namespace Dados
                 dr = cmd.ExecuteReader();
             }
 
-            while (dr.Read())
+            if (dr.HasRows)
             {
-                string id = dr.GetString(1).ToString();
-                string nome = dr.GetString(2).ToString();
-                cidades.Add(new Cidade());
+                while (dr.Read())
+                {
+                    Cidade cidade = new Cidade()
+                    {
+                        Id = (dr[0] == DBNull.Value) ? 0 : int.Parse(dr[0].ToString()),
+                        Nome = dr.GetString(1).ToString()
+                    };
+                    cidades.Add(cidade);
+                }
             }
             return cidades;
         }
-
     }
 }
